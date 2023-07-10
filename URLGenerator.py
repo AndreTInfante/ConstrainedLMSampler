@@ -79,7 +79,7 @@ class ConstrainedSampler:
             probabilities = [(probabilities[0][i].item(), i) for i in range(len(probabilities[0]))]
 
             # Exclude all the tokens that aren't in current.children
-            probabilities = [prob for prob in probabilities if prob[1] in current.children or prob[1] == current.token]
+            probabilities = [prob for prob in probabilities if prob[1] in current.children]
 
             if len(probabilities) == 0:
                 break
